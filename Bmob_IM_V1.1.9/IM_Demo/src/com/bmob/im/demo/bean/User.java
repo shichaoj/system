@@ -30,7 +30,7 @@ public class User extends BmobChatUser {
 	/**
 	 * //ÐÔ±ð-true-ÄÐ
 	 */
-	private Boolean sex;
+	private Boolean sex, isRenew;
 	
 	private Blog blog;
 	
@@ -72,6 +72,12 @@ public class User extends BmobChatUser {
 	public void setSex(Boolean sex) {
 		this.sex = sex;
 	}
+	public void setIsRenew(Boolean isRenew) {
+		this.isRenew = isRenew;
+	}
+	public Boolean getIsRenew() {
+		return isRenew;
+	}
 	public String getName(){
 		return name;
 	}
@@ -80,6 +86,9 @@ public class User extends BmobChatUser {
 	}
 	public String getMachineID(){
 		return machineID;
+	}
+	public void setMachineID(String machineID){
+		this.machineID = machineID;
 	}
 	public String getBorrowTime(){
 		return borrowTime;

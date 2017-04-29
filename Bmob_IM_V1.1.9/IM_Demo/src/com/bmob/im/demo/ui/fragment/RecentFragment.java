@@ -121,12 +121,18 @@ public class RecentFragment extends FragmentBase implements OnItemClickListener,
 	
 	private void updateUser(User user) {
 		// 更改
-		tv_recent_msg.setText("编号："+user.getMachineID());	
-		tv_recent_name.setText(user.getName());
-		
-		Long borrowTime = Long.parseLong(user.getBorrowTime());
-		tv_recent_time.setText("日期："+TimeUtil.getChatTime(borrowTime));
-		iv_recent_avatar.setImageResource(R.drawable.machine);
+		String machineID = user.getMachineID();
+		if(machineID.equals("0")){
+			tv_recent_msg.setText("无借用信息");	
+			tv_recent_name.setText(user.getName());
+			iv_recent_avatar.setImageResource(R.drawable.machine);
+		}else{
+			tv_recent_msg.setText("编号："+user.getMachineID());	
+			tv_recent_name.setText(user.getName());
+			Long borrowTime = Long.parseLong(user.getBorrowTime());
+			tv_recent_time.setText("日期："+TimeUtil.getChatTime(borrowTime));
+			iv_recent_avatar.setImageResource(R.drawable.machine);
+		}
 	}
 
 	

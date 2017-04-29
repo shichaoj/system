@@ -63,7 +63,7 @@ public class ReturnAdapter extends ArrayAdapter<BmobRecent> implements Filterabl
 		}
 		
 		tv_recent_name.setText(item.getUserName());
-		tv_recent_time.setText("日期："+TimeUtil.getReturnTime(item.getTime()));
+		tv_recent_time.setText("日期："+TimeUtil.getReturnTime(item.getTime(),true));
 		//显示内容
 		if(item.getType()==BmobConfig.TYPE_TEXT){
 			SpannableString spannableString = FaceTextUtils.toSpannableString(mContext, item.getMessage());

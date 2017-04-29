@@ -181,9 +181,13 @@ public class TimeUtil {
 		return result;
 	}
 	
-	public static String getReturnTime(long timesamp) {
+	public static String getReturnTime(long timesamp , Boolean isRenew) {
 		//借期三个月
-		timesamp+=3*MONTH;
+		if(isRenew){
+			timesamp+=4*MONTH;
+		}else{
+			timesamp+=3*MONTH;
+		}
 		long clearTime = timesamp*1000;
 		String result = "";
 		SimpleDateFormat sdf = new SimpleDateFormat("dd");
