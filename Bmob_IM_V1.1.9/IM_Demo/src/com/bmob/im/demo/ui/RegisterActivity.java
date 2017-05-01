@@ -85,7 +85,7 @@ public class RegisterActivity extends BaseActivity {
 		bu.setSex(true);
 		
 		bu.setMachineID("0");
-		
+		bu.setIsRenew(false);	
 		bu.setDeviceType("android");
 		bu.setInstallId(BmobInstallation.getInstallationId(this));
 		bu.signUp(RegisterActivity.this, new SaveListener() {

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -117,7 +118,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 		progress.setMessage("正在登陆...");
 		progress.setCanceledOnTouchOutside(false);
 		progress.show();
-		User user = new User();
+		final User user = new User();
 		user.setUsername(name);
 		user.setPassword(password);
 		userManager.login(user,new SaveListener() {
@@ -125,6 +126,8 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 			@Override
 			public void onSuccess() {
 				// TODO Auto-generated method stub
+				// 登录sessionToken每次不同
+				//Log.i("登录sessionToken",user.getSessionToken());
 				runOnUiThread(new Runnable() {
 
 					@Override

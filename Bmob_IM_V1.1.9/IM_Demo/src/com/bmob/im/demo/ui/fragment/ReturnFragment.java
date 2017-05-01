@@ -112,7 +112,6 @@ public class ReturnFragment extends FragmentBase implements OnItemClickListener,
 				// TODO Auto-generated method stub
 				if (arg0 != null && arg0.size() > 0) {
 					user = arg0.get(0);
-					Log.i("asd",user.toString());
 					updateUser(user);
 				} else {
 					ShowLog("onSuccess 查无此人");
